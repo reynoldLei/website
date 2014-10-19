@@ -9,8 +9,7 @@
         {{#foreach posts}}
         <article class="{{post_class}} post__wrapper" data-cols="4">
             <div class="post__wrapper_helper post__wrapper_helper--notloaded el__transition">
-               		<img src="{{image}}" alt="{{{title}}}" class="post__image_to_load" />
-<script>alert({{image}} +"    " + {{{image}}});</script>
+               		<img src="{{{imageUrl html}}}" alt="{{{title}}}" class="post__image_to_load" />
                 <div class="post__preview el__transition">    
                     <header class="post__header">
                         <h2 class="post__title">
@@ -20,16 +19,6 @@
                     
                     <p class="post__excerpt"><a href="{{url}}" class="post__link post__readmore">{{excerpt characters="120"}}&hellip;</a></p>
                 </div>
-
-                <footer class="post__meta">
-                    {{#if tags}}
-                    <ul class="post__tags">
-                        {{#foreach tags}}
-                        <li class="post__tag"><a href="{{url}}" class="post__link post__tag_link">{{name}}</a>{{#if @last}} {{else}}, {{/if}}</li>
-                        {{/foreach}}
-                    </ul>
-                    {{/if}}
-                </footer>
             </div>
         </article>
         {{/foreach}}

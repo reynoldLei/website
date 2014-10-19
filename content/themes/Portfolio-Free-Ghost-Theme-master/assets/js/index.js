@@ -80,8 +80,8 @@
           });
         }
         // fit videos
-        $(".post-header").fitVids();
-        $(".post-content").fitVids();
+        // $(".post-header").fitVids();
+        // $(".post-content").fitVids();
         // menu behaviour
         var main_menu = $(".menu");
         main_menu.click(function() {

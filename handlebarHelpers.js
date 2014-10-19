@@ -2,7 +2,9 @@ var Handlebars = require('express-hbs');
 // var _ = require('lodash');
 var registerHelper = function (){
     Handlebars.registerHelper('imageUrl', function imageUrl(html) {
-        var res = html.match(/\<img src=\"(.*)\" alt=\"event-cover\" \/\>/)
+        console.log(html);
+        var res = html.match(/\<img src=\"(.*)\" alt=\"(.*)\" \/\>/);
+        console.log(res);
         return res && res[1];
     });
     Handlebars.registerHelper('timeTag', function timeTag(html){
