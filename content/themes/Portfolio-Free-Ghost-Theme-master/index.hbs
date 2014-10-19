@@ -9,8 +9,8 @@
         {{#foreach posts}}
         <article class="{{post_class}} post__wrapper" data-cols="4">
             <div class="post__wrapper_helper post__wrapper_helper--notloaded el__transition">
-               		<img src="{{{imageUrl html}}}" alt="{{{title}}}" class="post__image_to_load" />
-
+               		<img src="{{image}}" alt="{{{title}}}" class="post__image_to_load" />
+<script>alert({{image}} +"    " + {{{image}}});</script>
                 <div class="post__preview el__transition">    
                     <header class="post__header">
                         <h2 class="post__title">

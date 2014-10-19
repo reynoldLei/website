@@ -164,18 +164,17 @@ main {
 ----------------------------------*/
 
 .menu {
-	padding: 0 0 42px 0;
+	padding: 0 0 5px 0;
 	text-align: center;
 }
 
 .menu__item {
-	border: 1px solid transparent;
 	color: #777;
 	display: inline-block;
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 34px;
-	padding: 0 20px;
+	padding: 3px 15px;
 }
 
 .menu__item:active,

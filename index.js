@@ -14,7 +14,7 @@ require('./core/server/utils/startup-check').check();
 express = require('express');
 ghost = require('./core');
 errors = require('./core/server/errors');
-handlebarHelpers = require('./handlebarHelpers');
+// handlebarHelpers = require('./handlebarHelpers');
 
 // Create our parent express app instance.
 parentApp = express();
