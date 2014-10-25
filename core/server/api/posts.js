@@ -48,6 +48,7 @@ posts = {
      * @returns {Promise(Posts)} Posts Collection with Meta
      */
     browse: function browse(options) {
+        console.log("api.browse");
         options = options || {};
 
         if (!(options.context && options.context.user)) {

@@ -8,17 +8,9 @@
         {{! Each post will be output using this markup }}
         {{#foreach posts}}
         <article class="{{post_class}} post__wrapper" data-cols="4">
-            <div class="post__wrapper_helper post__wrapper_helper--notloaded el__transition">
-               		<img src="{{{imageUrl html}}}" alt="{{{title}}}" class="post__image_to_load" />
-                <div class="post__preview el__transition">    
-                    <header class="post__header">
-                        <h2 class="post__title">
-                            <a href="{{url}}" class="post__link post__title_link"><span>{{{title}}}</span></a>
-                        </h2>
-                    </header>
-                    
-                    <p class="post__excerpt"><a href="{{url}}" class="post__link post__readmore">{{excerpt characters="120"}}&hellip;</a></p>
-                </div>
+            <div >
+           		<a href="{{url}}"><img src="{{{imageUrl html}}}" class="post__image_to_load" /></a> 
+                <a href = "{{url}}"> <p>{{{title}}}</p> </a>      
             </div>
         </article>
         {{/foreach}}

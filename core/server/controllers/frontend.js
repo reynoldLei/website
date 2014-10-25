@@ -144,13 +144,54 @@ function getActiveThemePaths() {
 }
 
 frontendControllers = {
+    productpage: function (req, res, next) {
+        console.log("controllers.frontend.productpage");
+        //production category (use tag to identify)
+        var tagParam = req.params.category;
+        // Parse the page number
+        var pageParam = req.params.page !== undefined ? parseInt(req.params.page, 10) : 1,
+            options = {
+                page: pageParam,
+                tag: tagParam
+            };
+        // No negative pages, or page 1
+        if (isNaN(pageParam) || pageParam < 1) {
+            return res.redirect(config.paths.subdir + '/');
+        }
+        return getPostPage(options).then(function (page) {
+
+            // If page is greater than number of pages we have, redirect to last page
+            if (pageParam > page.meta.pagination.pages) {
+                return res.redirect(page.meta.pagination.pages === 1 ? config.paths.subdir + '/' : (config.paths.subdir + '/page/' + page.meta.pagination.pages + '/'));
+            }
+
+            setReqCtx(req, page.posts);
+            // Render the page of posts
+            filters.doFilter('prePostsRender', page.posts).then(function (posts) {
+                getActiveThemePaths().then(function (paths) {
+                    // var view = paths.hasOwnProperty('home.hbs') ? 'home' : 'index';
+
+                    // // If we're on a page then we always render the index
+                    // // template.
+                    // if (pageParam > 1) {
+                    //     view = 'index';
+                    // }
+                    var view = 'index';
+
+                    setResponseContext(req, res);
+                    res.render(view, formatPageResponse(posts, page));
+                });
+            });
+        }).catch(handleError(next));
+    },
+
     homepage: function (req, res, next) {
+        console.log("controllers.frontend.homepage");
         // Parse the page number
         var pageParam = req.params.page !== undefined ? parseInt(req.params.page, 10) : 1,
             options = {
                 page: pageParam
             };
-
         // No negative pages, or page 1
         if (isNaN(pageParam) || pageParam < 1 || (pageParam === 1 && req.route.path === '/page/:page/')) {
             return res.redirect(config.paths.subdir + '/');
@@ -181,6 +222,7 @@ frontendControllers = {
             });
         }).catch(handleError(next));
     },
+
     tag: function (req, res, next) {
         // Parse the page number
         var pageParam = req.params.page !== undefined ? parseInt(req.params.page, 10) : 1,

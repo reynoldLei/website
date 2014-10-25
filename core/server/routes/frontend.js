@@ -52,6 +52,7 @@ frontendRoutes = function () {
     router.get('/page/:page/', frontend.homepage);
     router.get('/', frontend.homepage);
     router.get('*', frontend.single);
+    router.get('/product/:category',frontend.productpage);
 
     return router;
 };
