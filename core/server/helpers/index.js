@@ -510,12 +510,12 @@ coreHelpers.ghost_head = function (options) {
         if (self.pagination) {
             trimmedUrl = self.relativeUrl.match(trimmedUrlpattern);
             if (self.pagination.prev) {
-                prev = (self.pagination.prev > 1 ? prev = '/page/' + self.pagination.prev + '/' : prev = '/');
+                prev = (self.pagination.prev > 1 ? prev = '/category/' + self.pagination.tag + '/' + self.pagination.prev + '/' : prev = '/');
                 prev = (trimmedUrl) ? '/' + trimmedUrl + prev : prev;
                 head.push('<link rel="prev" href="' + config.urlFor({relativeUrl: prev}, true) + '" />');
             }
             if (self.pagination.next) {
-                next = '/page/' + self.pagination.next + '/';
+                next = '/category/' + self.pagination.tag + '/' + self.pagination.next + '/';
                 next = (trimmedUrl) ? '/' + trimmedUrl + next : next;
                 head.push('<link rel="next" href="' + config.urlFor({relativeUrl: next}, true) + '" />');
             }
@@ -755,6 +755,9 @@ coreHelpers.has = function (options) {
 // `{{pagination}}`
 // Outputs previous and next buttons, along with info about the current page
 coreHelpers.pagination = function (options) {
+    console.log("{{pagination}}");
+    console.log(this.pagination.pages);
+    console.log(this.pagination.tag);
     /*jshint unused:false*/
     if (!_.isObject(this.pagination) || _.isFunction(this.pagination)) {
         return errors.logAndThrowError('pagination data is not an object or is a function');

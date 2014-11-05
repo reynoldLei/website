@@ -274,6 +274,7 @@ Post = ghostBookshelf.Model.extend({
      */
     findPage: function (options) {
         console.log("model.post.findPage");
+        console.log("options.tag: "  + options.tag);
         options = options || {};
 
         var postCollection = Posts.forge(),
@@ -408,6 +409,8 @@ Post = ghostBookshelf.Model.extend({
                 pagination.limit = options.limit;
                 pagination.pages = calcPages === 0 ? 1 : calcPages;
                 pagination.total = totalPosts;
+                pagination.tag = options.tag;
+                console.log("pagination.tag: "+ pagination.tag);
                 pagination.next = null;
                 pagination.prev = null;
 

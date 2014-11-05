@@ -162,7 +162,7 @@ frontendControllers = {
 
             // If page is greater than number of pages we have, redirect to last page
             if (pageParam > page.meta.pagination.pages) {
-                return res.redirect(page.meta.pagination.pages === 1 ? config.paths.subdir + '/' : (config.paths.subdir + '/page/' + page.meta.pagination.pages + '/'));
+                return res.redirect(config.paths.subdir + '/category/' + page.meta.pagination.tag + '/' + page.meta.pagination.pages + '/');
             }
 
             setReqCtx(req, page.posts);
