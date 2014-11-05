@@ -49,10 +49,11 @@ frontendRoutes = function () {
     router.get('/author/:slug/', frontend.author);
 
     // Default
+    router.get('/category/:category/:page/', frontend.productpage);
     router.get('/page/:page/', frontend.homepage);
     router.get('/', frontend.homepage);
     router.get('*', frontend.single);
-    router.get('/product/:category',frontend.productpage);
+    router.get('/category/:category',frontend.productpage);
 
     return router;
 };
