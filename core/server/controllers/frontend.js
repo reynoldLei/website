@@ -208,6 +208,11 @@ frontendControllers = {
             // Render the page of posts
             filters.doFilter('prePostsRender', page.posts).then(function (posts) {
                 getActiveThemePaths().then(function (paths) {
+                    if (paths.hasOwnProperty('home.hbs')){
+                        console.log("home");
+                    }else{
+                        console.log("index");
+                    }
                     var view = paths.hasOwnProperty('home.hbs') ? 'home' : 'index';
 
                     // If we're on a page then we always render the index
