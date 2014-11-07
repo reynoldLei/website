@@ -320,7 +320,7 @@ main {
 
 .post__wrapper[data-cols="2"] { width: 45%; }
 .post__wrapper[data-cols="3"] { width: 30%; }
-.post__wrapper[data-cols="4"] { width: 20%; }
+.post__wrapper[data-cols="4"] { width: 22%; }
 
 .post__wrapper_helper {
 	background: #fff;
@@ -328,7 +328,7 @@ main {
 	-moz-box-shadow: 0 0 13px rgba(0, 0, 0, 0);
 	-ms-box-shadow: 0 0 13px rgba(0, 0, 0, 0);
 	box-shadow: 0 0 13px rgba(0, 0, 0, 0);
-	height: 380px;
+	height: 340px;
 	overflow: hidden;
 	opacity: 0;
 	position: relative;

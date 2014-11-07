@@ -16,17 +16,6 @@ p {
     padding: 10px;
 }
 
-#wrapper {
-    width: 100%;
-    margin: 0 auto;
-}
-
-#navigation {
-    float: left;
-    height: 40px;
-    width: 100%;
-    background: #FFCC33;
-}
 
 #header {
     float: left;

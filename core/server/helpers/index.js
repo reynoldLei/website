@@ -92,6 +92,9 @@ coreHelpers.encode = function (context, str) {
 coreHelpers.page_url = function (context, block) {
     /*jshint unused:false*/
     var url = config.paths.subdir;
+    // console.log("this.tags" + this.tags);
+    // console.log("this.post.tags" + this.post.tags);
+    var tags = this.post && this.post.tags ? this.post.tags : this.tags || [];
 
     if (this.tagSlug !== undefined) {
         url += '/tag/' + this.tagSlug;
@@ -102,10 +105,12 @@ coreHelpers.page_url = function (context, block) {
     }
 
     if (context > 1) {
-        url += '/page/' + context;
+        url += '/category/' + tags + '/' +context;
     }
 
     url += '/';
+
+    console.log("page_url: " + url);
 
     return url;
 };

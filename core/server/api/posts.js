@@ -48,8 +48,6 @@ posts = {
      * @returns {Promise(Posts)} Posts Collection with Meta
      */
     browse: function browse(options) {
-        console.log("api.browse");
-        console.log(options.tag);
         options = options || {};
 
         if (!(options.context && options.context.user)) {

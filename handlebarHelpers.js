@@ -16,6 +16,11 @@ var registerHelper = function (){
     	var arr= html.match(/\<addr src=\"(.*)\"\/\>/);
     	return arr && arr[1];
     });
+    Handlebars.registerHelper('commodityPrice', function commodityPrice(html){
+        // console.log(html);
+        var arr= html.match(/\<price src=\"(.*)\"\/\>/);
+        return arr && arr[1];
+    });
 };
 
 module.exports = registerHelper;
