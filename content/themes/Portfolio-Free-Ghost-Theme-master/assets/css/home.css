@@ -1,7 +1,7 @@
 body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 13px;
-    color:#333
+    background: #F1F1F1;
 }
 
 img {
@@ -16,12 +16,15 @@ p {
     padding: 10px;
 }
 
+#wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
 
 #header {
     float: left;
-    height: 20px;
+    height: 80px;
     width: 100%;
-    background: #FFFFFF;
 }
 
 #contentliquid {
@@ -30,15 +33,15 @@ p {
 }
 
 #content {
-    background: #FFFFFF;
+    background: #F1F1F1;
     margin: 0 auto;
-    width: 780px;
+    width: 900px;
 }
 
 #footer {
     height: 100px;
     width: 100%;
-    background: #FFFFFF;
+    background: #F1F1F1;
     clear: both;
 }
 
@@ -56,21 +59,50 @@ p {
 
 .wallcell {
     display: table-cell;
-    width: 260px;
-    height: 260px;
+    width: 300px;
+    height: 240px;
     padding: 5px;
 }
 
 .wallcell.wallempty
 {
     border: none;
-    width: 260px;
+    width: 300px;
 }
 
 .wallcell.wallrowspanned {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 520px;
-    height: 520px;
+    width: 600px;
+    height: 480px;
 }
+
+.display-pic {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background: rgba(250, 250, 250, 3);
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.display-pic:hover {
+    opacity: 0.9;
+    box-shadow: -0.5px -0.5px 8px #ffffff;
+}
+
+.transbox{
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.transbox:hover {
+    background: rgba(10, 10, 10, 5);
+}
+
